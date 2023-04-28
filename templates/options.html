@@ -1,0 +1,12 @@
+<div class="border-bottom row" style="margin-bottom:2px; padding-bottom:8px; border-color:black;">
+    <div class="col-9">
+        <h4 style="color:rgb(120,120,120); margin-bottom: 4px;">{{hero['title']}}</h4>
+        <div><b>Location: {{hero['location']}}</b></div>
+        {% if 'cost' in hero %}
+        <div><b>Cost: {{hero['cost']}}</b></div>
+        {% endif %}
+    </div>
+    <div class="col-3">
+        <button type="button" class="btn btn-outline-primary">Contact</button>
+    </div>
+</div>
