@@ -1,16 +1,21 @@
 {% extends "layout.html" %}
 
+
+{% block header %}
+    {% include 'nav.html' %}
+{% endblock %}
 {% block body %}
-{% include 'nav.html' %}
+<h1 class = "text-center mt-2 mb-4">Handy heros</h1>
+<img class = "img-fluid" id="banner" src="https://jovian-careers-website.aakashns.repl.co/static/banner.jpeg">
 <div class = "container">
-    <h1 class = "text-center mt-2 mb-4">Handy heros</h1>
-
-    <img class = "img-fluid" id="banner" src="https://jovian-careers-website.aakashns.repl.co/static/banner.jpeg">
-
     <p class="text-center mt-2 mb-4">Find a hero</p>
     <p class="text-center">
         {% for hero in Heros %}
             {% include 'options.html' %}
         {% endfor %}
     </p>
+{% endblock %}
+
+{% block footer %}
+    {% include 'footer.html' %}
 {% endblock %}
