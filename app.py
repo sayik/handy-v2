@@ -6,34 +6,31 @@
 # - To start the application, run this file using `python app.py`.
 
 from flask import Flask, render_template, jsonify
+from database import load_talents_db
+
 
 app = Flask(__name__)
 
-HEROS = [{  
-    'id': 1, 'title': 'Triumph Corner',
-    'location' : 'to be set', 'cost' : '1000 per/Hr'},
-    {'id': 2, 'title': 'Skyline Terrace',  
-    'location' : 'New York', 'cost' : '1200 per/Hr'},    
-    {'id': 3, 'title': 'Ocean View',
-    'location' : 'Los Angeles', 'cost' : '1500 per/Hr'}, 
-    {'id': 4, 'title': 'Mountain Retreat',
-    'location' : 'Aspen', 'cost' : '2000 per/Hr'},
-    {'id': 5, 'title': 'Sunset Oasis',        
-    'location' : 'Miami'}
-]
 
-
+# Render homepage
 @app.route('/')
 def index():
     return render_template("index.html")
 
+# Render talents
 @app.route("/heros")
 def heros():
-    return render_template("heros.html", Heros=HEROS)
+    talents = load_talents_db()
+    return render_template("heros.html", Heros=talents)
 
+# json data
 @app.route("/api/jobs")
 def list_jobs():
-    return jsonify(HEROS)
+    talents = load_talents_db()
+    return jsonify(talents)
+
+
+
 
 # needs to do login
 

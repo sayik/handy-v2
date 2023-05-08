@@ -1,0 +1,1 @@
+safe_keys = "mysql+pymysql://p6vs105f0uc1wdwxthoi:pscale_pw_hPG4GN6T7UeDYLoaREMZml6yBTNfV17seWdlB5fGfKP@aws.connect.psdb.cloud/handyheros?charset=utf8mb4"
